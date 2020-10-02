@@ -75,7 +75,7 @@ class Questions {
             type: "list",
             name: "role",
             message: "What is the role of the employee?",
-            choices: ["Manager", "Intern", "Engineer"],
+            choices: ["Manager", "Engineer", "Intern"],
             filter: function (val) {
               return val.toLowerCase();
             }
@@ -97,76 +97,5 @@ class Questions {
         return inquirer.prompt(questions);
     }
 }
-
-// const questions = {
-//     roles: ["Manager", "Intern", "Engineer"],
-//     manager: [
-//         //name,id,email,officeNumber
-//         {
-//             type: "input",
-//             name: "name",
-//             message: "What is the manager's name?"
-//         },
-//         {
-//             type: "input",
-//             name: "id",
-//             message: "What is the employee id?"
-//         },
-//         {
-//             type: "input",
-//             name: "email",
-//             message: "What is their email?"
-//         },
-//         {
-//             type: "input",
-//             name: "officeNumber",
-//             message: "What is the office number?"
-//         }
-//     ],
-//     intern: [
-//         {
-//             type: "input",
-//             name: "name",
-//             message: "What is the intern's name?"
-//         },
-//         {
-//             type: "input",
-//             name: "id",
-//             message: "What is their employee id?"
-//         },
-//         {
-//             type: "input",
-//             name: "email",
-//             message: "What is their email?"
-//         },
-//         {
-//             type: "input",
-//             name: "school",
-//             message: "What is the name of their school?"
-//         }
-//     ],
-//     engineer: [
-//         {
-//             type: "input",
-//             name: "name",
-//             message: "What is the engineer's name?"
-//         },
-//         {
-//             type: "input",
-//             name: "id",
-//             message: "What is their employee id?"
-//         },
-//         {
-//             type: "input",
-//             name: "email",
-//             message: "What is their email?"
-//         },
-//         {
-//             type: "input",
-//             name: "github",
-//             message: "What is their GitHub username?"
-//         }
-//     ]
-// };
 
 module.exports = Questions;
