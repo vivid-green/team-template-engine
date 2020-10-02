@@ -11,10 +11,11 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 const { resolve } = require("path");
 const employees = [];
-
+// function that holds Questions method to inquire employee type.
 const getRole = () => {
     return new Questions().inqRole();
 }
+// function that holds Questions method to inquire info about the respective employee type.
 const getAnswers = ({ role } = answers) => {
     return new Promise((resolve, reject) => {
         new Questions().inqQuestions(role).then(answers => {
@@ -26,7 +27,7 @@ const getAnswers = ({ role } = answers) => {
         }).catch(err => reject(err));
     })
 };
-
+// function to add employee to employees array.
 const addEmployee = ({ role, answers } = results) => {
     return new Promise((resolve) => {
         answers = Object.values(answers);
@@ -44,18 +45,18 @@ const addEmployee = ({ role, answers } = results) => {
         resolve();
     });
 };
-
+//function to inquire if more employees should be added.
 const addMore = () => {
     return new Questions().inqAddMore();
 }
-
+//function to write html file.
 const outputHtml = (data) => {
     fs.writeFile(outputPath, data, (err) => {
         if (err) throw err;
         return console.log('The file has been saved!');
     });
 }
-
+//function to start running CLI prompts.
 const runPrompt = () => {
     getRole()
     .then(getAnswers)
@@ -71,5 +72,5 @@ const runPrompt = () => {
         }
     })
 }
-
+// initialize CLI.
 runPrompt();
