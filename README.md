@@ -6,12 +6,6 @@
 Dynamically creates an html page containing information about a team of employees (manager, engineer, intern) which is gathered by the user from inquirer js CLI.
 
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
-# Table of Contents
-* [Description](#Description)
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [License](#License)
-* [Questions](#Questions)
 
 # Installation
 npm i
